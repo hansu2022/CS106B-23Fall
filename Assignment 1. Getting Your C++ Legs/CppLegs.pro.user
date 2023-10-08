@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.3, 2023-10-09T00:14:28. -->
+<!-- Written by QtCreator 11.0.3, 2023-10-09T01:04:36. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -238,12 +238,13 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/2023_106B/CS106/starter-assign1/CppLegs.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/2023_106B/CS106/starter-assign1/CppLegs.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">CppLegs2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/2023_106B/CS106/Assignment 1. Getting Your C++ Legs/CppLegs.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/2023_106B/CS106/Assignment 1. Getting Your C++ Legs/CppLegs.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/2023_106B/CS106/starter-assign1</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/2023_106B/CS106/Assignment 1. Getting Your C++ Legs</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

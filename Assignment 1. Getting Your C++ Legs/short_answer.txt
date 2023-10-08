@@ -5,31 +5,65 @@ Perfect Numbers
 ---------------
 
 Q1. Roughly how long did it take your computer to do the search? How many perfect numbers were found and what were they?
-A1. TODO
+A1. findPerfects(10000) (size =    10000) completed in    0.102 secs
+    findPerfects(20000) (size =    20000) completed in    0.335 secs
+    findPerfects(40000) (size =    40000) completed in    1.261 secs
+    findPerfects(80000) (size =    80000) completed in    4.966 secs
+    Found perfect number: 6、28、496、8128
+
 
 Q2. Make a table of the timing results for `findPerfects` that you observed. (old-school table of text rows and columns is just fine)
-A2. TODO
+A2. findPerfects(20000) (size =    20000) completed in    0.344 secs
+    findPerfects(40000) (size =    40000) completed in    1.268 secs
+    findPerfects(80000) (size =    80000) completed in    4.968 secs
+    findPerfects(160000) (size =   160000) completed in   19.951 secs
 
 Q3. Does it take the same amount of work to compute `isPerfect` on the number 10 as it does on the number 1000? Why or why not? Does it take the same amount of work for `findPerfects` to search the range of numbers from 1-1000 as it does to search the numbers from 1000-2000? Why or why not?
-A3. TODO
+A3. No, it does not take the same amount of work to compute isPerfect for the numbers 10 and 1000,
+and the same applies to findPerfects when searching the range from 1-1000 compared to 1000-2000.
+For isPerfect:When computing isPerfect for the number 10, the divisorSum function needs to check the divisors from 1 to 9, as the proper divisors of 10 are 1, 2, and 5. So, it involves checking 9 divisors.
+When computing isPerfect for the number 1000, the divisorSum function needs to check the divisors from 1 to 999, as the proper divisors of 1000 are 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 125, 200, 250, and 500. So, it involves checking 999 divisors.
+Therefore, it takes significantly more work to compute isPerfect for 1000 compared to 10 because it involves checking a larger number of divisors.
+For findPerfects:
+When searching for perfect numbers in the range from 1-1000, it involves checking all numbers from 1 to 1000, and for each number, it computes whether it is perfect or not. This means it checks the proper divisors for all numbers in that range.
+When searching for perfect numbers in the range from 1000-2000, it involves checking all numbers from 1000 to 2000, and for each number, it computes whether it is perfect or not. This is similar to searching the range from 1-1000, but it involves a different range of numbers.
+Therefore, it takes the same amount of work to search for perfect numbers in both ranges because the algorithm checks all numbers within the specified range, regardless of where the range starts or ends. However, the numbers being checked are different.
 
 Q4. Extrapolate from the data you gathered and make a prediction: how long will it take `findPerfects` to reach the fifth perfect number?
-A4. TODO
+A4. 几天的时间
 
 Q5. Do any of the tests still pass even with this broken function? Why or why not?
-A5. TODO
+A5. With the bug in the divisorSum function, none of the tests are expected to pass because the function no longer calculates the sum of proper divisors correctly. The bug causes the function to always include 1 in the sum of divisors, which is incorrect for most numbers, leading to incorrect results.
 
 Q6. Explain your testing strategy for `smarterSum` and how you chose your specific test cases that lead you to be confident the function is working correctly.
-A6. TODO
+A6. STUDENT_TEST("6,28,30,296的total是否等于6,28,30,296"){
+EXPECT_EQUAL(smarterSum(6), 6);
+EXPECT_EQUAL(smarterSum(28), 28);
+EXPECT_EQUAL(smarterSum(30), 30);
+EXPECT_EQUAL(smarterSum(296), 296);
+} 除了30（total为42）没有通过测试其他都通过了验证也为完美数
 
 Q7. Record your timing results for `findPerfectsSmarter` into a table.
-A7. TODO
+A7. findPerfectsSmarter(1000000) (size =  1000000) completed in    2.963 secs
+    findPerfectsSmarter(2000000) (size =  2000000) completed in    8.017 secs
+    findPerfectsSmarter(4000000) (size =  4000000) completed in   21.881 secs
+    findPerfectsSmarter(8000000) (size =  8000000) completed in   62.155 secs
 
 Q8. Make a prediction: how long will `findPerfectsSmarter` take to reach the fifth perfect number?
-A8. TODO
+A8. 一小时
 
 Q9. Explain how you chose your specific test cases and why they lead you to be confident `findNthPerfectEuclid` is working correctly.
-A9. TODO
+A9. STUDENT_TEST("验证第一、二、三、四的完美数数值是否正确"){
+EXPECT_EQUAL(findNthPerfectEuclid(1), 6);
+EXPECT_EQUAL(findNthPerfectEuclid(2), 28);
+EXPECT_EQUAL(findNthPerfectEuclid(3), 496);
+EXPECT_EQUAL(findNthPerfectEuclid(4), 8128);
+EXPECT_EQUAL(findNthPerfectEuclid(5), 33550336);
+EXPECT_EQUAL(findNthPerfectEuclid(6), 8589869056);
+}
+STUDENT_TEST("验证第五个是不是完美数"){
+EXPECT(isPerfect(findNthPerfectEuclid(5)));
+}   他在long类型的范围内对完美数12345的判断都没有出错
 
 Soundex
 -------

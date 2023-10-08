@@ -125,8 +125,11 @@ long findNthPerfectEuclid(long n) {
 /* * * * * * Test Cases * * * * * */
 
 // TODO: add your STUDENT_TEST test cases here!
-STUDENT_TEST("28的total是否等于28"){
+STUDENT_TEST("6,28,30,296的total是否等于6,28,30,296"){
+    EXPECT_EQUAL(smarterSum(6), 6);
     EXPECT_EQUAL(smarterSum(28), 28);
+    EXPECT_EQUAL(smarterSum(496), 496);
+    EXPECT_EQUAL(smarterSum(30), 30);
 }
 STUDENT_TEST("质数7的total是否等于1"){
     EXPECT_EQUAL(smarterSum(7), 1);
@@ -137,10 +140,18 @@ STUDENT_TEST("验证6和28和122是否为完美数"){
     EXPECT(!isPerfectSmarter(122));
 }
 STUDENT_TEST("Time trial of findPerfects on input size 1000") {
-    TIME_OPERATION(1000, findPerfectsSmarter(1000));
-}
-STUDENT_TEST("验证第五个是不是完美数"){
+    TIME_OPERATION(1000000, findPerfectsSmarter(1000000));
+    TIME_OPERATION(2000000, findPerfectsSmarter(2000000));
+    TIME_OPERATION(4000000, findPerfectsSmarter(4000000));
+    TIME_OPERATION(8000000, findPerfectsSmarter(8000000));
+}//
+STUDENT_TEST("验证第一、二、三、四的完美数数值是否正确"){
+    EXPECT_EQUAL(findNthPerfectEuclid(1), 6);
     EXPECT_EQUAL(findNthPerfectEuclid(2), 28);
+    EXPECT_EQUAL(findNthPerfectEuclid(3), 496);
+    EXPECT_EQUAL(findNthPerfectEuclid(4), 8128);
+    EXPECT_EQUAL(findNthPerfectEuclid(5), 33550336);
+    EXPECT_EQUAL(findNthPerfectEuclid(6), 8589869056);
 }
 STUDENT_TEST("验证第五个是不是完美数"){
     EXPECT(isPerfect(findNthPerfectEuclid(5)));
@@ -191,6 +202,5 @@ PROVIDED_TEST("Confirm 33550336 is perfect") {
 
 PROVIDED_TEST("Time trial of findPerfects on input size 1000") {
     TIME_OPERATION(1000, findPerfects(1000));
-
 }
 
