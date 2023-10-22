@@ -7,6 +7,7 @@
 #include <cctype>
 #include <fstream>
 #include <string>
+#include <map>
 #include "console.h"
 #include "strlib.h"
 #include "filelib.h"
@@ -14,6 +15,7 @@
 #include "vector.h"
 #include "SimpleTest.h"
 #include "soundex.h"
+#include <algorithm>
 using namespace std;
 
 /* This function is intended to return a string which
@@ -27,8 +29,8 @@ using namespace std;
  * replace it with a description of the bug you fixed.
  */
 string lettersOnly(string s) {
-    string result = charToString(s[0]);
-    for (int i = 1; i < s.length(); i++) {
+    string result = "";
+    for (int i = 0; i < s.length(); i++) {
         if (isalpha(s[i])) {
             result += s[i];
         }
@@ -37,17 +39,32 @@ string lettersOnly(string s) {
 }
 
 
-/* TODO: Replace this comment with a descriptive function
- * header comment.
- */
+
 string soundex(string s) {
-    /* TODO: Fill in this function. */
-    return "";
+
+    s = lettersOnly(s);
+
+    s[0]=toupper(s[0]);
+
+    string result = s.substr(0,1);
+
+    map<char, int> soundexMap = {{'A', 0}, {'E', 0}, {'I', 0}, {'O', 0}, {'U', 0}, {'H', 0}, {'W', 0}, {'Y', 0},{'B', 1}, {'F', 1}, {'P', 1}, {'V', 1},{'C', 2}, {'G', 2}, {'J', 2}, {'K', 2}, {'Q', 2}, {'S', 2}, {'X', 2}, {'Z', 2},{'D', 3}, {'T', 3},{'L', 4},{'M', 5}, {'N', 5},{'R', 6},};
+
+    for(int i = 1;i<s.length() && result.length()<4;i++){
+        char prevDight = '0' + soundexMap[toupper(s[i-1])];
+        char currDight = '0' + soundexMap[toupper(s[i])];
+        if(currDight !='0' && currDight != prevDight){
+            result += currDight;
+        }
+    }
+    while(result.length()<4){
+        result += '0';
+    }
+    return result;
 }
 
 
-/* TODO: Replace this comment with a descriptive function
- * header comment.
+/* TODO: 这段函数读取了斯坦福的名称数据库，输入需要查找的名字，会转换为SoundexCode与数据库中的名称进行比对，相同的SoundexCode则输出；
  */
 void soundexSearch(string filepath) {
     // This provided code opens the specified file
@@ -64,13 +81,36 @@ void soundexSearch(string filepath) {
     // The names read from file are now stored in Vector allNames
 
     /* TODO: Fill in the remainder of this function. */
+    while(true){
+        cout << "Enter a surname (RETURN to quit): ";
+        string userInput;
+        getline(cin,userInput);
+
+        string soundexCode = soundex(userInput);
+        cout<<"Soundex code is " << soundexCode;
+
+        vector<string> matches;
+        for(const string& name : allNames){
+            if(soundex(name) == soundexCode){
+                matches.push_back(name);
+            }
+        }
+        sort(matches.begin(),matches.end());
+        cout << "Matches from database :" << matches.data() << endl;
+    }
+
 }
 
 
 /* * * * * * Test Cases * * * * * */
 
 // TODO: add your STUDENT_TEST test cases here!
+STUDENT_TEST("Test exclude of punctuation, digits, and spaces") {
+    string s = "311O'Hara";
+    string result = lettersOnly(s);
+    EXPECT_EQUAL(result, "OHara");
 
+}
 
 /* Please not add/modify/remove the PROVIDED_TEST entries below.
  * Place your student tests cases above the provided tests.

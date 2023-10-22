@@ -69,15 +69,18 @@ Soundex
 -------
 
 Q10. What is the Soundex code for "Angelou"? What is the code for your own surname?
-A10. TODO
+A10. Angelou:A256;Chen:C500.
 
 Q11. Before writing any code, brainstorm your plan of attack and sketch how you might decompose the work into smaller tasks. Briefly describe your decomposition strategy.
-A11. TODO
+A11. My approach is to first check if the input consists of letters. If it does, I will convert the first letter to uppercase.
+  Then, I will use the table to sequentially convert the subsequent letters into digits.
+  After successful conversion, I will remove any extra zeros.
+  I'll also verify if the resulting string is exactly four characters long, and if not, I'll either pad it with zeros or truncate any excess characters.
 
 Q12. Think about one or more examples of a class of names that the Soundex system might not work well for. Explain what this class of names is and why the system might incorrectly group them or mis-categorize one of the names.
-A12. TODO
+A12. For example, consider the class of Polish surnames that contain a sequence of consonants like "Szcz" or "Cz" which is relatively common in Polish names. Names like "Szczepan" and "Czerny" both contain the "Szcz" and "Cz" sequences, and they would likely produce the same Soundex code due to the coalescing of adjacent duplicate digits in the Soundex algorithm.
 
 Q13. Suppose you are a software engineer working for the U.S. government. You have been tasked with implementing a system that collects names as part of the Census survey and analyzes these names using a phonetic algorithm. Your boss suggests using Soundex and notes that the algorithm is only expected to work for ASCII-encoded strings, since supporting Unicode would require extra work and time. What would your response be and why? What representational harms might result from building a system that exclusively uses Soundex and/or ASCII?
-A13. TODO
+A13. it is important to recognize that exclusive use of Soundex and ASCII encoding may lead to representational harms by excluding diverse communities and individuals with non-ASCII characters in their names. To ensure the accuracy and inclusivity of the Census survey, it is worth investing in a system that can handle a broader range of characters and encoding schemes, even if it requires additional development effort and time.
 
 

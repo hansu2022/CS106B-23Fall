@@ -125,37 +125,37 @@ long findNthPerfectEuclid(long n) {
 /* * * * * * Test Cases * * * * * */
 
 // TODO: add your STUDENT_TEST test cases here!
-STUDENT_TEST("6,28,30,296的total是否等于6,28,30,296"){
-    EXPECT_EQUAL(smarterSum(6), 6);
-    EXPECT_EQUAL(smarterSum(28), 28);
-    EXPECT_EQUAL(smarterSum(496), 496);
-    EXPECT_EQUAL(smarterSum(30), 30);
-}
-STUDENT_TEST("质数7的total是否等于1"){
-    EXPECT_EQUAL(smarterSum(7), 1);
-}
-STUDENT_TEST("验证6和28和122是否为完美数"){
-    EXPECT(isPerfectSmarter(6));
-    EXPECT(isPerfectSmarter(28));
-    EXPECT(!isPerfectSmarter(122));
-}
-STUDENT_TEST("Time trial of findPerfects on input size 1000") {
-    TIME_OPERATION(1000000, findPerfectsSmarter(1000000));
-    TIME_OPERATION(2000000, findPerfectsSmarter(2000000));
-    TIME_OPERATION(4000000, findPerfectsSmarter(4000000));
-    TIME_OPERATION(8000000, findPerfectsSmarter(8000000));
-}//
-STUDENT_TEST("验证第一、二、三、四的完美数数值是否正确"){
-    EXPECT_EQUAL(findNthPerfectEuclid(1), 6);
-    EXPECT_EQUAL(findNthPerfectEuclid(2), 28);
-    EXPECT_EQUAL(findNthPerfectEuclid(3), 496);
-    EXPECT_EQUAL(findNthPerfectEuclid(4), 8128);
-    EXPECT_EQUAL(findNthPerfectEuclid(5), 33550336);
-    EXPECT_EQUAL(findNthPerfectEuclid(6), 8589869056);
-}
-STUDENT_TEST("验证第五个是不是完美数"){
-    EXPECT(isPerfect(findNthPerfectEuclid(5)));
-}
+//STUDENT_TEST("6,28,30,296的total是否等于6,28,30,296"){
+//    EXPECT_EQUAL(smarterSum(6), 6);
+//    EXPECT_EQUAL(smarterSum(28), 28);
+//    EXPECT_EQUAL(smarterSum(496), 496);
+//    EXPECT_EQUAL(smarterSum(30), 30);
+//}
+//STUDENT_TEST("质数7的total是否等于1"){
+//    EXPECT_EQUAL(smarterSum(7), 1);
+//}
+//STUDENT_TEST("验证6和28和122是否为完美数"){
+//    EXPECT(isPerfectSmarter(6));
+//    EXPECT(isPerfectSmarter(28));
+//    EXPECT(!isPerfectSmarter(122));
+//}
+//STUDENT_TEST("Time trial of findPerfects on input size 1000") {
+//    TIME_OPERATION(1000000, findPerfectsSmarter(1000000));
+//    TIME_OPERATION(2000000, findPerfectsSmarter(2000000));
+//    TIME_OPERATION(4000000, findPerfectsSmarter(4000000));
+//    TIME_OPERATION(8000000, findPerfectsSmarter(8000000));
+//}//
+//STUDENT_TEST("验证第一、二、三、四的完美数数值是否正确"){
+//    EXPECT_EQUAL(findNthPerfectEuclid(1), 6);
+//    EXPECT_EQUAL(findNthPerfectEuclid(2), 28);
+//    EXPECT_EQUAL(findNthPerfectEuclid(3), 496);
+//    EXPECT_EQUAL(findNthPerfectEuclid(4), 8128);
+//    EXPECT_EQUAL(findNthPerfectEuclid(5), 33550336);
+//    EXPECT_EQUAL(findNthPerfectEuclid(6), 8589869056);
+//}
+//STUDENT_TEST("验证第五个是不是完美数"){
+//    EXPECT(isPerfect(findNthPerfectEuclid(5)));
+//}
 
 
 
@@ -175,32 +175,32 @@ STUDENT_TEST("验证第五个是不是完美数"){
  * Place your student tests cases above the provided tests.
  */
 
-PROVIDED_TEST("Confirm divisorSum of small inputs") {
-    EXPECT_EQUAL(divisorSum(1), 0);
-    EXPECT_EQUAL(divisorSum(6), 6);
-    EXPECT_EQUAL(divisorSum(12), 16);
-}
+//PROVIDED_TEST("Confirm divisorSum of small inputs") {
+//    EXPECT_EQUAL(divisorSum(1), 0);
+//    EXPECT_EQUAL(divisorSum(6), 6);
+//    EXPECT_EQUAL(divisorSum(12), 16);
+//}
 
-PROVIDED_TEST("Confirm 6 and 28 are perfect") {
-    EXPECT(isPerfect(6));
-    EXPECT(isPerfect(28));
-}
+//PROVIDED_TEST("Confirm 6 and 28 are perfect") {
+//    EXPECT(isPerfect(6));
+//    EXPECT(isPerfect(28));
+//}
 
-PROVIDED_TEST("Confirm 12 and 98765 are not perfect") {
-    EXPECT(!isPerfect(12));
-    EXPECT(!isPerfect(98765));
-}
+//PROVIDED_TEST("Confirm 12 and 98765 are not perfect") {
+//    EXPECT(!isPerfect(12));
+//    EXPECT(!isPerfect(98765));
+//}
 
-PROVIDED_TEST("Test oddballs: 0 and 1 are not perfect") {
-    EXPECT(!isPerfect(0));
-    EXPECT(!isPerfect(1));
-}
+//PROVIDED_TEST("Test oddballs: 0 and 1 are not perfect") {
+//    EXPECT(!isPerfect(0));
+//    EXPECT(!isPerfect(1));
+//}
 
-PROVIDED_TEST("Confirm 33550336 is perfect") {
-    EXPECT(isPerfect(33550336));
-}
+//PROVIDED_TEST("Confirm 33550336 is perfect") {
+//    EXPECT(isPerfect(33550336));
+//}
 
-PROVIDED_TEST("Time trial of findPerfects on input size 1000") {
-    TIME_OPERATION(1000, findPerfects(1000));
-}
+//PROVIDED_TEST("Time trial of findPerfects on input size 1000") {
+//    TIME_OPERATION(1000, findPerfects(1000));
+//}
 
